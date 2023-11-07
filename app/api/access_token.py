@@ -1,6 +1,6 @@
 from fastapi import Depends, HTTPException
 from jose import JWTError, jwt
-from .database import get_db
+from my_project.app.database import get_db
 from .models import User
 
 def get_current_user(db: Session = Depends(get_db), token: str = Security(oauth2_scheme)):
